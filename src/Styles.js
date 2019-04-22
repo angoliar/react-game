@@ -1,4 +1,7 @@
 import {fade} from '@material-ui/core/styles/colorManipulator';
+import {fieldSize} from "./consts";
+
+const squareSize = 100 / fieldSize;
 
 export const header = theme => ({
     root: {
@@ -6,6 +9,8 @@ export const header = theme => ({
     },
     grow: {
         flexGrow: 1,
+        marginRight: theme.spacing.unit,
+        marginLeft: theme.spacing.unit,
     },
     menuButton: {
         marginLeft: -12,
@@ -32,5 +37,35 @@ export const header = theme => ({
     },
     chip: {
         margin: theme.spacing.unit,
+    },
+    label: {
+        color: '#fff',
+    },
+});
+export const field = theme => ({
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+        padding: theme.spacing.unit * 2,
+        margin: `${theme.spacing.unit * 2}px auto`,
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        display: 'flex',
+        flexWrap: 'wrap',
+        width: 500,
+        height: 500,
+        [theme.breakpoints.down('xs')]: {
+            width: 300,
+            height: 300,
+        },
+    },
+    square: {
+        width: `${squareSize}%`,
+        height: `${squareSize}%`,
+        backgroundColor: 'blue',
+        boxSizing: 'border-box',
+        border: '1px solid #fff',
+        flexShrink: 0,
     },
 });

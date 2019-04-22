@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
-import {AppBar, Toolbar, Typography, InputBase, Chip, Avatar} from '@material-ui/core';
+import {AppBar, Toolbar, Typography, InputBase, Chip, InputLabel} from '@material-ui/core';
 import {header as styles} from '../Styles';
 
 class Header extends Component {
@@ -14,6 +14,9 @@ class Header extends Component {
                         <Typography variant="h6" color="inherit" className={classes.grow}>
                             The game
                         </Typography>
+                        <InputLabel className={classes.label}>
+                            Milliseconds:
+                        </InputLabel>
                         <div className={classes.search}>
                             <InputBase
                                 placeholder="Milliseconds"
