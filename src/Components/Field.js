@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
-import {Grid, Paper} from '@material-ui/core';
+import {Paper} from '@material-ui/core';
 import {field as styles} from '../Styles';
 import {fieldSize} from "../consts";
 
@@ -10,13 +10,9 @@ class Field extends Component {
         const {classes} = this.props;
         return (
             <div className={classes.root}>
-                <Grid container spacing={24}>
-                    <Grid item xs={12}>
-                        <Paper className={classes.paper}>
-                            {this.getSquares().map(square => square)}
-                        </Paper>
-                    </Grid>
-                </Grid>
+                <Paper className={classes.paper}>
+                    {this.getSquares().map(square => square)}
+                </Paper>
             </div>
         );
     }

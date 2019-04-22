@@ -16,6 +16,12 @@ export const header = theme => ({
         marginLeft: -12,
         marginRight: 20,
     },
+    toolbar: {
+        [theme.breakpoints.down('xs')]: {
+            display: 'block',
+            textAlign: 'center',
+        },
+    },
     search: {
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
@@ -37,9 +43,16 @@ export const header = theme => ({
     },
     chip: {
         margin: theme.spacing.unit,
+        [theme.breakpoints.down('xs')]: {
+            margin: theme.spacing.unit * 2,
+        },
     },
     label: {
         color: '#fff',
+        [theme.breakpoints.down('xs')]: {
+            margin: theme.spacing.unit * 2,
+            display: 'block',
+        },
     },
 });
 export const field = theme => ({
@@ -67,5 +80,14 @@ export const field = theme => ({
         boxSizing: 'border-box',
         border: '1px solid #fff',
         flexShrink: 0,
+    },
+});
+export const button = theme => ({
+    root: {
+        justifyContent: 'center',
+        display: 'flex',
+    },
+    button: {
+        margin: theme.spacing.unit,
     },
 });

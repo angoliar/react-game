@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Header, Field} from "./Components";
+import {Header, Field, Button} from "./Components";
 import {defaultMilliseconds} from "./consts";
 
 class App extends Component {
@@ -14,6 +14,10 @@ class App extends Component {
         this.setState({milliseconds: e.target.value});
     };
 
+    handleStartGame = () => {
+        console.log('start');
+    };
+
     render() {
         const {milliseconds, userScore, computerScore, pending} = this.state;
         return (
@@ -26,6 +30,7 @@ class App extends Component {
                     pending={pending}
                 />
                 <Field/>
+                <Button handleClick={this.handleStartGame}/>
             </div>
         );
     }

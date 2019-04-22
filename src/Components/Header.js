@@ -10,7 +10,7 @@ class Header extends Component {
         return (
             <div className={classes.root}>
                 <AppBar position="static">
-                    <Toolbar>
+                    <Toolbar className={classes.toolbar}>
                         <Typography variant="h6" color="inherit" className={classes.grow}>
                             The game
                         </Typography>
