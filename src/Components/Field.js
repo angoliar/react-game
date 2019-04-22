@@ -26,6 +26,8 @@ class Field extends Component {
 
 Field.propTypes = {
     classes: PropTypes.object.isRequired,
+    squares: PropTypes.array.isRequired,
+    handleClick: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(Field);

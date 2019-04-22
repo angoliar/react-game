@@ -46,6 +46,11 @@ class Header extends Component {
 
 Header.propTypes = {
     classes: PropTypes.object.isRequired,
+    milliseconds: PropTypes.number.isRequired,
+    handleChangeMilliseconds: PropTypes.func.isRequired,
+    userScore: PropTypes.number.isRequired,
+    computerScore: PropTypes.number.isRequired,
+    pending: PropTypes.bool.isRequired,
 };
 
 export default withStyles(styles)(Header);

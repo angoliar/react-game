@@ -25,6 +25,8 @@ class Button extends Component {
 
 Button.propTypes = {
     classes: PropTypes.object.isRequired,
+    handleClick: PropTypes.func.isRequired,
+    pending: PropTypes.bool.isRequired,
 };
 
 export default withStyles(styles)(Button);

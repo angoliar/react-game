@@ -56,6 +56,10 @@ class Popup extends Component {
 
 Popup.propTypes = {
     classes: PropTypes.object.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    userScore: PropTypes.number.isRequired,
+    computerScore: PropTypes.number.isRequired,
+    pending: PropTypes.bool.isRequired,
 };
 
 export default withStyles(styles)(Popup);
