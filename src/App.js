@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Header, Field, Button} from "./Components";
+import {Header, Field, Button, Popup} from "./Components";
 import {defaultMilliseconds} from "./consts";
 
 class App extends Component {
@@ -31,6 +31,10 @@ class App extends Component {
                 />
                 <Field/>
                 <Button handleClick={this.handleStartGame}/>
+                <Popup
+                    userScore={userScore}
+                    computerScore={computerScore}
+                />
             </div>
         );
     }

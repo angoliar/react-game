@@ -91,3 +91,24 @@ export const button = theme => ({
         margin: theme.spacing.unit,
     },
 });
+export const modal = theme => ({
+    paper: {
+        position: 'absolute',
+        width: theme.spacing.unit * 50,
+        maxWidth: '100%',
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing.unit * 4,
+        outline: 'none',
+        top: '50%',
+        left: '50%',
+        transform: `translate(-50%, -50%)`,
+        textAlign: 'center',
+        [theme.breakpoints.down('xs')]: {
+            width: theme.spacing.unit * 35,
+        },
+    },
+    button: {
+        margin: theme.spacing.unit,
+    },
+});
