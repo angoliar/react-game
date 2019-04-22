@@ -6,7 +6,7 @@ import {button as styles} from '../Styles';
 
 class Button extends Component {
     render() {
-        const {classes, handleClick} = this.props;
+        const {classes, handleClick, pending} = this.props;
         return (
             <div className={classes.root}>
                 <ButtonMui
@@ -14,11 +14,11 @@ class Button extends Component {
                     color="primary"
                     className={classes.button}
                     onClick={handleClick}
+                    disabled={pending}
                 >
                     Play
                 </ButtonMui>
             </div>
-
         );
     }
 }

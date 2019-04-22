@@ -76,10 +76,22 @@ export const field = theme => ({
     square: {
         width: `${squareSize}%`,
         height: `${squareSize}%`,
-        backgroundColor: 'blue',
         boxSizing: 'border-box',
         border: '1px solid #fff',
         flexShrink: 0,
+        cursor: 'pointer',
+    },
+    inactive: {
+        backgroundColor: 'blue',
+    },
+    active: {
+        backgroundColor: 'yellow',
+    },
+    clicked: {
+        backgroundColor: 'green',
+    },
+    missed: {
+        backgroundColor: 'red',
     },
 });
 export const button = theme => ({

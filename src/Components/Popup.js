@@ -10,7 +10,17 @@ class Popup extends Component {
     };
 
     handleClose = () => {
+        const {handleClose} = this.props;
         this.setState({open: false});
+        handleClose();
+    };
+
+    componentDidUpdate = () => {
+        const {pending, userScore, computerScore} = this.props;
+        const {open} = this.state;
+        if (!pending && (userScore || computerScore) && !open) {
+            this.setState({open: true});
+        }
     };
 
     render() {
