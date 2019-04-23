@@ -9,7 +9,8 @@ class App extends Component {
         userScore: 0,
         computerScore: 0,
         squares: [],
-        square: null
+        square: null,
+        validationError: false,
     };
 
     timer = null;
@@ -19,7 +20,19 @@ class App extends Component {
     };
 
     handleChangeMilliseconds = e => {
-        this.setState({milliseconds: e.target.value});
+        const milliseconds = parseInt(e.target.value);
+        if (!milliseconds || milliseconds <= 0) {
+            this.setState({
+                validationError: true,
+                milliseconds: 0,
+            });
+            return;
+        }
+        this.setState({
+            validationError: false,
+        });
+
+        this.setState({milliseconds});
     };
 
     handleCloseModal = () => {
@@ -32,7 +45,10 @@ class App extends Component {
     };
 
     startGame = () => {
-        const {milliseconds} = this.state;
+        const {milliseconds, validationError} = this.state;
+        if (validationError) {
+            return;
+        }
         this.activateNewSquare();
         this.setState({
             pending: true,
@@ -45,17 +61,17 @@ class App extends Component {
         clearTimeout(this.timer);
     };
 
-    handleClickOnSquare = () => {
-        const {squares, square} = this.state;
+    handleClickOnSquare = i => () => {
+        const {squares} = this.state;
 
-        if (squares[square].status !== 'active') {
-            return;
+        if (squares[i].status !== 'active') {
+            return null;
         }
         setTimeout(this.scoreToUser, 0);
     };
 
     render() {
-        const {milliseconds, userScore, computerScore, pending, squares} = this.state;
+        const {milliseconds, userScore, computerScore, pending, squares, validationError} = this.state;
         return (
             <div>
                 <Header
@@ -64,6 +80,7 @@ class App extends Component {
                     computerScore={computerScore}
                     handleChangeMilliseconds={this.handleChangeMilliseconds}
                     pending={pending}
+                    validationError={validationError}
                 />
                 <Field
                     squares={squares}

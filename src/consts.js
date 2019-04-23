@@ -1,2 +1,2 @@
 export const defaultMilliseconds = 1000;
-export const fieldSize = 5;
+export const fieldSize = 10;

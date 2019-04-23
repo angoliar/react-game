@@ -2,11 +2,20 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import {AppBar, Toolbar, Typography, InputBase, Chip, InputLabel} from '@material-ui/core';
+import classNames from 'classnames';
 import {header as styles} from '../Styles';
 
 class Header extends Component {
     render() {
-        const {classes, milliseconds, handleChangeMilliseconds, userScore, computerScore, pending} = this.props;
+        const {
+            classes,
+            milliseconds,
+            handleChangeMilliseconds,
+            userScore,
+            computerScore,
+            pending,
+            validationError,
+        } = this.props;
         return (
             <div className={classes.root}>
                 <AppBar position="static">
@@ -17,9 +26,10 @@ class Header extends Component {
                         <InputLabel className={classes.label}>
                             Milliseconds:
                         </InputLabel>
-                        <div className={classes.search}>
+                        <div className={classNames(classes.search, validationError ? classes.error : null)}>
                             <InputBase
                                 placeholder="Milliseconds"
+                                type={'number'}
                                 classes={{
                                     root: classes.inputRoot,
                                     input: classes.inputInput,

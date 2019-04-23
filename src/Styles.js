@@ -41,6 +41,9 @@ export const header = theme => ({
         transition: theme.transitions.create('width'),
         width: 100,
     },
+    error: {
+        border: '1px solid red',
+    },
     chip: {
         margin: theme.spacing.unit,
         [theme.breakpoints.down('xs')]: {

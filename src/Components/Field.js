@@ -11,11 +11,11 @@ class Field extends Component {
         return (
             <div className={classes.root}>
                 <Paper className={classes.paper}>
-                    {squares.map(square => (
+                    {squares.map((square, i) => (
                         <div
                             className={classNames(classes.square, classes[square.status])}
                             key={`${square.x}${square.y}`}
-                            onClick={handleClick}
+                            onClick={handleClick(i)}
                         />
                     ))}
                 </Paper>
